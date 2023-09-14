@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:title="profile">
+            <menu>
+
+                <item
+                    android:id="@+id/my_profile"
+                    android:icon="@drawable/myprofile"
+                    android:title="My profile" />
+
+                <item
+                    android:id="@+id/update_profile"
+                    android:icon="@drawable/updateprofile"
+                    android:title="Update profile" />
+            </menu>
+        </item>
+
+    </group>
+    <item android:title="About">
+        <menu>
+            <item
+                android:id="@+id/share_menu"
+                android:icon="@drawable/share"
+                android:title="share">
+
+            </item>
+
+            <item
+                android:id="@+id/setting_menu"
+                android:icon="@drawable/setting"
+                android:title="Setting">
+
+            </item>
+
+            <item
+                android:id="@+id/about_menu"
+                android:icon="@drawable/about"
+                android:title="About">
+
+            </item>
+        </menu>
+    </item>
+
+    <group android:checkableBehavior="single">
+
+        <item android:title="Authentication">
+
+            <menu>
+                <item
+                    android:id="@+id/logout_menu"
+                    android:icon="@drawable/signout"
+                    android:title="Sign Out">
+
+                </item>
+            </menu>
+        </item>
+    </group>
+
+</menu>

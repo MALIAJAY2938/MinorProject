@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".home_screen">
+
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        tools:openDrawer="start">
+
+        <include
+            layout="@layout/topnavigationbar_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </include>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigationview"
+            android:layout_width="270dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/navigation_drawerheader"
+            app:menu="@menu/navigation_drawer_item"
+            android:fontFamily="@font/convergence"
+            android:backgroundTint="#ffffff">
+
+        </com.google.android.material.navigation.NavigationView>
+
+<!--        <include layout="@layout/bottomnavigation_main"/>-->
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+<!--    android:layout_marginTop="?attr/actionBarSize"-->
+<!--    <include layout="@layout/bottomnavigation_main" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>

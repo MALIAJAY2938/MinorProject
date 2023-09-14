@@ -44,6 +44,25 @@
         <item>Others</item>
     </string-array>
 
+    // class selection
+    <string-array name="Class">
+        <item>Any Class</item>
+        <item>AC 2 Tier</item>
+        <item>AC 3 Tier</item>
+        <item>Sleeper</item>
+        <item>Second Sitting</item>
+    </string-array>
+
+    // Quoata selection
+    <string-array name="quota">
+        <item>General</item>
+        <item>Ladies</item>
+        <item>Tatkal</item>
+        <item>Sr. Citizen</item>
+        <item>Premium Tatkal</item>
+        <item>Person with Disability</item>
+    </string-array>
+
     // state selection
     <string-array name="state">
         <item>Andhra Pradesh</item>

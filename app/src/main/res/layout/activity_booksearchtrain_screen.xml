@@ -4,40 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".home_screen_bookticket">
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#ffffff"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
-        app:srcCompat="@drawable/back_arrow" />
+    tools:context=".booksearchtrain_screen">
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/convergence"
-        android:text="Book Ticket"
-        android:textSize="25dp"
+        android:text="TRAIN SEARCH"
+        android:textSize="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.042" />
+        app:layout_constraintVertical_bias="0.051" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/bookticketedittext_from"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:id="@+id/searchtrainscreenedittext_from"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         app:boxCornerRadiusBottomEnd="12dp"
@@ -50,24 +37,27 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.257">
+        app:layout_constraintVertical_bias="0.152">
 
-        <AutoCompleteTextView
-            android:id="@+id/autoCompleteTextView_from"
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/convergence"
             android:hint="From"
-            android:textSize="18sp">
+            android:inputType="text"
+            android:paddingEnd="10dp"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="20dp"
+            tools:layout_editor_absoluteY="83dp">
 
-        </AutoCompleteTextView>
+        </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/bookticketedittext_to"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:id="@+id/searchtrainscreenedittext_to"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         app:boxCornerRadiusBottomEnd="12dp"
@@ -80,21 +70,25 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.366">
+        app:layout_constraintVertical_bias="0.343">
 
-        <AutoCompleteTextView
-            android:id="@+id/autoCompleteTextView_to"
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/convergence"
             android:hint="To"
-            android:textSize="18sp">
+            android:inputType="text"
+            android:paddingEnd="10dp"
+            android:textColorHint="#8D6E63"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="20dp"
+            tools:layout_editor_absoluteY="83dp">
 
-        </AutoCompleteTextView>
+        </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/registerscreenedittext_journeydate"
+        android:id="@+id/searchtrainscreenedittext_journeydate"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -113,7 +107,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.476">
+        app:layout_constraintVertical_bias="0.469">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -124,7 +118,7 @@
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:fontFamily="@font/convergence"
-            android:hint="Journey date"
+            android:hint="Journey Date"
             android:inputType="text"
             android:textSize="18sp">
 
@@ -132,10 +126,10 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/bookticketedittext_class"
+        android:id="@+id/searchtrainscreen_selectclass"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         app:boxCornerRadiusBottomEnd="12dp"
@@ -143,29 +137,31 @@
         app:boxCornerRadiusTopEnd="12dp"
         app:boxCornerRadiusTopStart="12dp"
         app:boxStrokeColor="@color/blue"
+        app:errorEnabled="false"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.593">
+        app:layout_constraintVertical_bias="0.6">
 
         <AutoCompleteTextView
             android:id="@+id/autoCompleteTextView_class"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:fontFamily="@font/convergence"
             android:hint="Class"
-            android:textSize="18sp">
-
-        </AutoCompleteTextView>
+            android:inputType="none"
+            android:textSize="18sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/bookticketedittext_couch"
+        android:id="@+id/searchtrainscreen_selectquota"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         app:boxCornerRadiusBottomEnd="12dp"
@@ -173,36 +169,53 @@
         app:boxCornerRadiusTopEnd="12dp"
         app:boxCornerRadiusTopStart="12dp"
         app:boxStrokeColor="@color/blue"
+        app:errorEnabled="false"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.71">
+        app:layout_constraintVertical_bias="0.728">
 
         <AutoCompleteTextView
-            android:id="@+id/autoCompleteTextView_couch"
+            android:id="@+id/autoCompleteTextView_quota"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:fontFamily="@font/convergence"
-            android:hint="Couch"
-            android:textSize="18sp">
-
-        </AutoCompleteTextView>
+            android:hint="Quota"
+            android:inputType="none"
+            android:textSize="18sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/searchtrainscreenbtn_searchtrains"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:text="Book"
-        android:textColor="@color/black"
-        android:textSize="24sp"
         android:backgroundTint="@color/blue"
         android:fontFamily="@font/almendra"
+        android:gravity="center"
+        android:text="Search Trains"
+        android:textColor="@color/black"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.954" />
+        app:layout_constraintVertical_bias="0.864" />
+
+    <ImageButton
+        android:id="@+id/searchtrainscreen_exchangebutton"
+        android:layout_width="64dp"
+        android:layout_height="53dp"
+        android:src="@drawable/exchange"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/searchtrainscreenedittext_to"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchtrainscreenedittext_from" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

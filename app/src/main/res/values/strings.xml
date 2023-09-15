@@ -1219,4 +1219,17 @@
         <item>Titagarh</item>
     </string-array>
 
+    // about us
+    <string name="arpitrole">Role:-Front End Devloper</string>
+    <string name="arpitabout"> Arpit Bharatbhai Kakadiya is the front end devloper of the railway reservation Application,Who is currently study in Sutex Bank College Amroli.He is also the project Manager.</string>
+
+    <string name="ajayrole">Role:-Back End Devloper</string>
+    <string name="ajayabout"> Mali Ajay Ganpat Ram is the back end devloper of the railway reservation Application,Who is currently study in Sutex Bank College Amroli.</string>
+
+    <string name="krishrole">Role:-Test Engineer</string>
+    <string name="krishabout"> Krish Ashokbhai radadiya is the Test Engineer of the railway reservation Application,Who is currently study in Sutex Bank College Amroli.</string>
+
+    <string name="umeshrole">Role:-System Architect</string>
+    <string name="umeshabout"> Mishra UmeshChandra SureshChandra is the System Architect of the railway reservation Application,Who is currently study in Sutex Bank College Amroli.</string>
+
 </resources>

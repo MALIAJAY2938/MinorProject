@@ -1,10 +1,12 @@
 package com.example.railway_reservation;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -42,6 +44,20 @@ public class MyAdapterSearchedTrainlist extends  RecyclerView.Adapter<MyAdapterS
         holder.time_durationad.setText(String.valueOf(time_durationad.get(position)));
         holder.arriving_timead.setText(String.valueOf(arriving_timead.get(position)));
         holder.destination_timead.setText(String.valueOf(destination_timead.get(position)));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context,PassengerAdding.class);
+                intent.putExtra("tr_no",holder.train_noad.getText().toString());
+                intent.putExtra("tr_name",holder.train_namead.getText().toString());
+                intent.putExtra("tr_from",holder.train_fromad.getText().toString());
+                intent.putExtra("tr_to",holder.train_toad.getText().toString());
+                intent.putExtra("tr_durationtime",holder.time_durationad.getText().toString());
+                intent.putExtra("tr_arrivingtime",holder.arriving_timead.getText().toString());
+                intent.putExtra("tr_destinationtime",holder.destination_timead.getText().toString());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

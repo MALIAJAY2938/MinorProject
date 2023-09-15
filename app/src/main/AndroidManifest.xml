@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Railway_reservation"
         tools:targetApi="31">
         <activity
+            android:name=".TicketBooked"
+            android:exported="false" />
+        <activity
+            android:name=".PassengerAdding"
+            android:exported="false" />
+        <activity
             android:name=".searchedtrainlist_screen"
             android:exported="true" />
         <activity

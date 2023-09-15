@@ -30,6 +30,7 @@ public class booksearchtrain_screen extends AppCompatActivity {
 
         setContentView(view);
 
+
         String Class[] = getResources().getStringArray(R.array.Class);
         ArrayAdapter classselection = new ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1,Class);
         booksearchtrainbinding.autoCompleteTextViewClass.setAdapter(classselection);
@@ -38,25 +39,18 @@ public class booksearchtrain_screen extends AppCompatActivity {
         ArrayAdapter quotaselection = new ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1,Quota);
         booksearchtrainbinding.autoCompleteTextViewQuota.setAdapter(quotaselection);
 
-        booksearchtrainbinding.searchtrainscreenExchangebutton.setOnClickListener(new View.OnClickListener() {
+        String Station[] = getResources().getStringArray(R.array.Stations);
+        ArrayAdapter stationselection = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item,Station);
+        booksearchtrainbinding.autoCompleteTextViewFrom.setAdapter(stationselection);
+        booksearchtrainbinding.autoCompleteTextViewTo.setAdapter(stationselection);
+
+        booksearchtrainbinding.backToHomeScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String a = booksearchtrainbinding.searchtrainscreenedittextFrom.getEditText().getText().toString();
-                String b = booksearchtrainbinding.searchtrainscreenedittextTo.getEditText().getText().toString();
-                // Print String before swapping
-
-                // append 2nd string to 1st
-                a = a + b;
-
-                // store initial string a in string b
-                b = a.substring(0,a.length()-b.length());
-                booksearchtrainbinding.searchtrainscreenedittextTo.getEditText().setText(b);;
-                a = a.substring(b.length());
-                // store initial string b in string a
-                booksearchtrainbinding.searchtrainscreenedittextFrom.getEditText().setText(a);
+                Intent intent = new Intent(booksearchtrain_screen.this,home_screen.class);
+                startActivity(intent);
             }
         });
-
         booksearchtrainbinding.searchtrainscreenedittextJourneydate.getEditText().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,19 +74,19 @@ public class booksearchtrain_screen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String strFrom = booksearchtrainbinding.searchtrainscreenedittextFrom.getEditText().getText().toString();
-                String strTo = booksearchtrainbinding.searchtrainscreenedittextTo.getEditText().getText().toString();
+                String strFrom = booksearchtrainbinding.autoCompleteTextViewFrom.getText().toString();
+                String strTo = booksearchtrainbinding.autoCompleteTextViewTo.getText().toString();
                 String strDate = booksearchtrainbinding.searchtrainscreenedittextJourneydate.getEditText().getText().toString();
                 String strClass = booksearchtrainbinding.searchtrainscreenSelectclass.getEditText().getText().toString();
                 String strQuota = booksearchtrainbinding.searchtrainscreenSelectquota.getEditText().getText().toString();
 
                 if (TextUtils.isEmpty(strFrom)){
                     Toast.makeText(booksearchtrain_screen.this, "From station is required", Toast.LENGTH_SHORT).show();
-                    booksearchtrainbinding.searchtrainscreenedittextFrom.requestFocus();
+                    booksearchtrainbinding.autoCompleteTextViewFrom.requestFocus();
                 }
                 else if(TextUtils.isEmpty(strTo)){
                     Toast.makeText(booksearchtrain_screen.this, "To station is required", Toast.LENGTH_SHORT).show();
-                    booksearchtrainbinding.searchtrainscreenedittextTo.requestFocus();
+                    booksearchtrainbinding.autoCompleteTextViewTo.requestFocus();
                 }
                 else if(TextUtils.isEmpty(strDate)){
                     Toast.makeText(booksearchtrain_screen.this, "Journey Date is required", Toast.LENGTH_SHORT).show();

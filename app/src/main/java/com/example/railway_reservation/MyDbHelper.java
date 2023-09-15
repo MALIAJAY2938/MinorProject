@@ -30,6 +30,12 @@ public class MyDbHelper extends SQLiteOpenHelper {
         MyDB.execSQL("INSERT INTO train_info VALUES('12472','SWARAJ EXPRESS','Delhi','Mumbai','19h:21m','20:49','16:10')");
         MyDB.execSQL("INSERT INTO train_info VALUES('12473','SWARAJ EXPRESS','Mumbai','Delhi','19h:21m','15:00','10:00')");
         MyDB.execSQL("INSERT INTO train_info VALUES('22717','RJT SC SUP EXP','Rajkot Jn','Secunderabad Jn','26h:00m','05:30','07:30')");
+        MyDB.execSQL("INSERT INTO train_info VALUES('20901','VANDE BHARAT EXP','Surat','Ahmedabad Jn','02h:27m','08:58','11:25')");
+        MyDB.execSQL("INSERT INTO train_info VALUES('22903','BHUJ AC SF EXP','Surat','Ahmedabad Jn','03h:15m','03:10','06:25')");
+        MyDB.execSQL("INSERT INTO train_info VALUES('22451','BDTS CDG SF EXP','Surat','Ahmedabad Jn','03h:19m','15:16','18:36')");
+        MyDB.execSQL("INSERT INTO train_info VALUES('12971','BDTS BVC SF EXP','Surat','Ahmedabad Jn','03h:28m','23:07','02:35')");
+        MyDB.execSQL("INSERT INTO train_info VALUES('12480','SURYANAGARI EXP','Mumbai','Jodhpur Jn','02h:27m','08:58','11:25')");
+
     }
 
     @Override

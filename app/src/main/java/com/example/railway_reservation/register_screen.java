@@ -120,6 +120,7 @@ public class register_screen extends AppCompatActivity {
                 String state = registerbinding.registerscreenSelectstate.getEditText().getText().toString();
                 String city = registerbinding.registerscreenSelectcity.getEditText().getText().toString();
                 String password = registerbinding.registerscreenedittextPassword.getEditText().getText().toString();
+                String countrycode = registerbinding.registerscreenedittextCountrycode.getEditText().getText().toString();
                 if(TextUtils.isEmpty(fullname)){
                     Toast.makeText(register_screen.this, "please enter fullname", Toast.LENGTH_SHORT).show();
                     registerbinding.registerscreenedittextFullname.requestFocus();
@@ -135,8 +136,10 @@ public class register_screen extends AppCompatActivity {
                 else if(mobileno.length() != 10){
                     Toast.makeText(register_screen.this, "Enter Mobile No Correctly", Toast.LENGTH_SHORT).show();
                     registerbinding.registerscreenedittextMobilenumber.requestFocus();
-                }
-                else if (TextUtils.isEmpty(dob)){
+                } else if (TextUtils.isEmpty(countrycode)) {
+                    Toast.makeText(register_screen.this, "Please select Country code", Toast.LENGTH_SHORT).show();
+                    registerbinding.registerscreenedittextCountrycode.requestFocus();
+                } else if (TextUtils.isEmpty(dob)){
                     Toast.makeText(register_screen.this, "please select date of birth", Toast.LENGTH_SHORT).show();
                     registerbinding.registerscreenedittextBirthdate.requestFocus();
                 }
@@ -160,13 +163,14 @@ public class register_screen extends AppCompatActivity {
                     Toast.makeText(register_screen.this, "please Enter Strong password", Toast.LENGTH_SHORT).show();
                     registerbinding.registerscreenedittextPassword.requestFocus();
                 }
-                else if(mobileno.length()>0){
+                else {
                     Boolean checkmobileno = DB.checkMobileno(mobileno);
                     if (checkmobileno==true){
                         Toast.makeText(register_screen.this, "Mobile no is already exists", Toast.LENGTH_SHORT).show();
                         registerbinding.registerscreenedittextMobilenumber.requestFocus();
                     }
                     else {
+                        mobileno = countrycode+mobileno;
                         Boolean checkuser = DB.checkUser(username);
                         if (checkuser == false){
                             boolean insert = DB.insertData(fullname,username,mobileno,dob,gender,state,city,password);
@@ -183,23 +187,6 @@ public class register_screen extends AppCompatActivity {
                             Toast.makeText(register_screen.this, "Username is already exists! you can go to sign in", Toast.LENGTH_SHORT).show();
                             registerbinding.registerscreenedittextUsername.setError("username is already exists");
                         }
-                    }
-                }
-                else {
-                    Boolean checkuser = DB.checkUser(username);
-                    if (checkuser == false){
-                        boolean insert = DB.insertData(fullname,username,mobileno,dob,gender,state,city,password);
-                        if (insert == true){
-                            Toast.makeText(register_screen.this, "user Registered successfully", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(register_screen.this,login_screen.class);
-                            startActivity(intent);
-                        }
-                        else {
-                            Toast.makeText(register_screen.this, "Registration is failed", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                    else {
-                        Toast.makeText(register_screen.this, "Username is already exists! you can go to sign in", Toast.LENGTH_SHORT).show();
                     }
                 }
 

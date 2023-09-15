@@ -50,6 +50,14 @@ public class searchedtrainlist_screen extends AppCompatActivity {
         searchedtrainlistScreenBinding.searchedtrainRecyclerview.setLayoutManager(new LinearLayoutManager(this));
         displaData();
 
+        searchedtrainlistScreenBinding.backToTrainSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(searchedtrainlist_screen.this,booksearchtrain_screen.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 

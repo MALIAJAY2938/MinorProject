@@ -53,6 +53,67 @@
         <item>Second Sitting</item>
     </string-array>
 
+    //berth preference
+    <string-array name="BerthPreference">
+        <item>Upper Berth</item>
+        <item>Middle Berth</item>
+        <item>Lower Berth</item>
+        <item>Side Lower</item>
+        <item>Side Upper</item>
+
+    </string-array>
+
+    //From Stations
+    <string-array name="Stations">
+        <item>Ahmedabad Jn</item>
+        <item>Jalore</item>
+        <item>Mumbai</item>
+        <item>Pali</item>
+        <item>Delhi</item>
+        <item>Pokhran</item>
+        <item>Surat</item>
+        <item>Jaisalmer</item>
+        <item>Jaipur</item>
+        <item>Barmer</item>
+        <item>Jodhpur Jn</item>
+        <item>Mount Abu</item>
+        <item>Nagaur</item>
+        <item>Ujjain</item>
+        <item>Rajkot</item>
+        <item>Aurangabad</item>
+        <item>Gandhinagar</item>
+        <item>Nanded</item>
+        <item>Udhana Jn</item>
+        <item>Lalitpur</item>
+        <item>Jansi</item>
+        <item>Gwalior</item>
+        <item>Bikaner Jn</item>
+        <item>Visakhapatnam</item>
+        <item>Secunderabad Jn</item>
+        <item>Sambalpur</item>
+        <item>Shahganj jn</item>
+        <item>Vijayawada</item>
+        <item>Surapur</item>
+        <item>Solapur Jn</item>
+        <item>Sardiha</item>
+        <item>Sarju</item>
+        <item>Varanasi</item>
+        <item>Prayagraj Jn</item>
+        <item>Nashik</item>
+        <item>Indore</item>
+        <item>Amravati</item>
+        <item>Kota</item>
+        <item>Jamnagar</item>
+        <item>Bhuj</item>
+        <item>Porbandar Jn</item>
+        <item>Junagadh</item>
+        <item>Palanpur</item>
+        <item>Bhavnagar</item>
+
+
+    </string-array>
+
+
     // Quoata selection
     <string-array name="quota">
         <item>General</item>

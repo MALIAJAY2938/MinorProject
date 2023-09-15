@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".searchedtrainlist_screen">
 
+    <ImageButton
+        android:id="@+id/backToTrainSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/back_arrow">
+
+    </ImageButton>
+
     <TextView
         android:id="@+id/txt_selectTrain"
         android:layout_width="match_parent"

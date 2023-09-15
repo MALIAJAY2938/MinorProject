@@ -66,8 +66,11 @@ public class home_screen extends AppCompatActivity {
                     homebinding.drawerlayout.close();
 
                 } else if (id==R.id.setting_menu) {
+                    Intent intent = new Intent(home_screen.this,booksearchtrain_screen.class);
+                    startActivity(intent);
                     Toast.makeText(getApplicationContext(),"setting",Toast.LENGTH_SHORT).show();
                     homebinding.drawerlayout.close();
+
 
                 } else if (id==R.id.about_menu) {
                     Toast.makeText(getApplicationContext(),"About us",Toast.LENGTH_SHORT).show();

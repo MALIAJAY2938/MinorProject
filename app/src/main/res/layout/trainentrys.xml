@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.transformation.TransformationChildCard xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardviewLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="25dp"
-    app:cardBackgroundColor="#B7B2F1"
-    android:layout_margin="14dp">
+    android:layout_margin="14dp"
+    android:elevation="0dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -141,4 +141,4 @@
     </LinearLayout>
 
 
-</androidx.cardview.widget.CardView>
+</com.google.android.material.transformation.TransformationChildCard>

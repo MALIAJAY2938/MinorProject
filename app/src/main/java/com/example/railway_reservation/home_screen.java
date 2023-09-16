@@ -72,10 +72,9 @@ public class home_screen extends AppCompatActivity {
 
 
                 } else if (id==R.id.about_menu) {
-                    Toast.makeText(getApplicationContext(),"About us",Toast.LENGTH_SHORT).show();
-                    homebinding.drawerlayout.close();
                     Intent intent = new Intent(home_screen.this, homescreen_navigationdrawer_aboutus.class);
                     startActivity(intent);
+                    homebinding.drawerlayout.close();
 
                 }else {
                     SharedPreferences sharedPreferences = getSharedPreferences(login_screen.PREFS_NAME,0);

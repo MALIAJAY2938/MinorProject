@@ -25,7 +25,6 @@
         android:layout_marginLeft="53dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="34dp"
-
         android:layout_toRightOf="@+id/backToTrainSelect"
         android:text="PASSENGER DETAILS"
         android:textColor="#192167"
@@ -33,7 +32,7 @@
 
     </TextView>
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.transformation.TransformationChildCard
         android:id="@+id/cardviewLayout"
         android:layout_below="@id/backToTrainSelect"
         android:layout_width="match_parent"
@@ -42,7 +41,6 @@
         android:layout_marginTop="14dp"
         android:layout_marginEnd="14dp"
         android:layout_marginBottom="14dp"
-        app:cardBackgroundColor="#B7B2F1"
         app:cardCornerRadius="25dp">
 
         <LinearLayout
@@ -176,7 +174,7 @@
 
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.transformation.TransformationChildCard>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passengerscreenedittext_AdharName"

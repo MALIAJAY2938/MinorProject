@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 public class MyDbHelper extends SQLiteOpenHelper {
     public static final String DBName = "Login.db";
@@ -17,6 +18,7 @@ public class MyDbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase MyDB) {
         MyDB.execSQL("CREATE TABLE user_info(fullname TEXT,username TEXT primary key,mobileno TEXT unique,dob TEXT,gender TEXT,state TEXT,city TEXT,password TEXT)");
         MyDB.execSQL("CREATE TABLE  train_info(train_no TEXT primary key,train_name TEXT,train_from TEXT,train_to TEXT,time_duration TEXT,arriving_time TEXT,destination_time TEXT)");
+        MyDB.execSQL("CREATE TABLE bookedticket(pnr INTEGER primary key autoincrement,train_no TEXT,date TEXT)");
         MyDB.execSQL("INSERT INTO train_info VALUES('12216','DEE GARIBRATH','Surat','Jaipur','14h:44m','15:16','06:00')");
         MyDB.execSQL("INSERT INTO train_info VALUES('12955','MMCT JAIPUR SF','Surat','Jaipur','13h:25m','22:16','12:00')");
         MyDB.execSQL("INSERT INTO train_info VALUES('22737','SC HSR SF EXP','Secunderabad Jn','Bikaner Jn','37h:15m','23:45','12:50')");
@@ -42,6 +44,7 @@ public class MyDbHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase MyDB, int i, int i1) {
         MyDB.execSQL("DROP TABLE IF EXISTS user_info");
         MyDB.execSQL("DROP TABLE IF EXISTS train_info");
+        MyDB.execSQL("DROP TABLE IF EXISTS bookedticket");
     }
     public boolean insertData(String fullname,String username,String mobileno,String dob,String gender,String state,String city,String password){
         SQLiteDatabase MyDB = this.getWritableDatabase();
@@ -61,6 +64,13 @@ public class MyDbHelper extends SQLiteOpenHelper {
             return  true;
     }
 
+    public void insertBookedTicket(String train_no,String date){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("train_no",train_no);
+        values.put("date",date);
+        long result = MyDB.insert("bookedticket",null,values);
+    }
     public boolean checkUser(String username){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("SELECT * FROM user_info WHERE username=?",new String[] {username});
@@ -96,5 +106,28 @@ public class MyDbHelper extends SQLiteOpenHelper {
         Cursor cursor = MyDB.rawQuery("SELECT * FROM train_info WHERE train_from=? AND train_to=?",new String[] {from,to});
 
         return cursor;
+    }
+
+    public Cursor getBookedTickets(){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        Cursor cursor = MyDB.rawQuery("SELECT * FROM bookedticket",null);
+
+
+        return cursor;
+    }
+
+    public void deletebookedticket(int pnr){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+
+        MyDB.execSQL("delete from bookedticket where pnr="+pnr);
+    }
+    public void updatebookedticket(String date,int pnr){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("date",date);
+
+        MyDB.update("bookedticket",values,"pnr"+"="+pnr,null);
+
+//        MyDB.execSQL("update bookedticket set date = "+date+" where pnr="+pnr);
     }
 }

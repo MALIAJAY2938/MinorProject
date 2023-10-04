@@ -13,6 +13,8 @@ import android.widget.LinearLayout;
 
 import com.example.railway_reservation.R;
 import com.example.railway_reservation.booksearchtrain_screen;
+import com.example.railway_reservation.cancelbooking_screen;
+import com.example.railway_reservation.mybookedtickets_screen;
 
 public class
 home_fragment extends Fragment {
@@ -53,6 +55,23 @@ home_fragment extends Fragment {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.indianrail.gov.in/enquiry/SCHEDULE/TrainSchedule.html?locale=en"));
                 startActivity(intent);
 
+            }
+        });
+        LinearLayout myBooking = v.findViewById(R.id.linearLayoutmybooking);
+        myBooking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), mybookedtickets_screen.class);
+                startActivity(intent);
+            }
+        });
+        LinearLayout cancelbooking = v.findViewById(R.id.linearLayoutcancelticket);
+
+        cancelbooking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), cancelbooking_screen.class);
+                startActivity(intent);
             }
         });
         LinearLayout busbooking = v.findViewById(R.id.linearLayoutbusbooking);

@@ -16,9 +16,11 @@ public class PassengerAdding extends AppCompatActivity {
 
     ActivityPassengerAddingBinding passengerAddingBinding;
 
+    MyDbHelper Db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Db = new MyDbHelper(this);
         passengerAddingBinding = ActivityPassengerAddingBinding.inflate(getLayoutInflater());
         View view = passengerAddingBinding.getRoot();
         setContentView(view);
@@ -30,6 +32,7 @@ public class PassengerAdding extends AppCompatActivity {
         ArrayAdapter berthselection = new ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1,berth);
         passengerAddingBinding.autoCompleteTextViewBerthPreference.setAdapter(berthselection);
         Intent intent = getIntent();
+        String date = booksearchtrain_screen.strDate;
         String tr_no = intent.getStringExtra("tr_no");
         String tr_name = intent.getStringExtra("tr_name");
         String tr_from = intent.getStringExtra("tr_from");
@@ -74,6 +77,7 @@ public class PassengerAdding extends AppCompatActivity {
                     passengerAddingBinding.passengerscreenedittextMobilenumber.requestFocus();
                 }
                 else{
+                    Db.insertBookedTicket(tr_no,date);
                     Intent intent = new Intent(PassengerAdding.this,TicketBooked.class);
                     intent.putExtra("name",name);
                     startActivity(intent);

@@ -21,6 +21,8 @@ public class booksearchtrain_screen extends AppCompatActivity {
 
     ActivityBooksearchtrainScreenBinding booksearchtrainbinding;
 
+    static String strDate;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,7 +78,7 @@ public class booksearchtrain_screen extends AppCompatActivity {
 
                 String strFrom = booksearchtrainbinding.autoCompleteTextViewFrom.getText().toString();
                 String strTo = booksearchtrainbinding.autoCompleteTextViewTo.getText().toString();
-                String strDate = booksearchtrainbinding.searchtrainscreenedittextJourneydate.getEditText().getText().toString();
+                strDate = booksearchtrainbinding.searchtrainscreenedittextJourneydate.getEditText().getText().toString();
                 String strClass = booksearchtrainbinding.searchtrainscreenSelectclass.getEditText().getText().toString();
                 String strQuota = booksearchtrainbinding.searchtrainscreenSelectquota.getEditText().getText().toString();
 

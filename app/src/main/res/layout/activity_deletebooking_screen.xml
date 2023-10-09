@@ -29,19 +29,19 @@
             android:orientation="vertical"
             android:gravity="center">
             <TextView
-                android:id="@+id/bookedticket_trainno"
+                android:id="@+id/deleteticket_trainno"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="train no"
+                android:text="14707"
                 android:textStyle="bold"
                 android:padding="7dp">
 
             </TextView>
             <TextView
-                android:id="@+id/bookedticket_date"
+                android:id="@+id/deleteticket_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="date"
+                android:text="01/08/23"
                 android:padding="7dp">
 
             </TextView>
@@ -61,10 +61,10 @@
 
             </TextView>
             <TextView
-                android:id="@+id/bookedticket_pnrno"
+                android:id="@+id/deleteticket_pnrno"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="12345">
+                android:text="5">
 
             </TextView>
 

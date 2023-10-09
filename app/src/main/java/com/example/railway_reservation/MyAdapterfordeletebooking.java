@@ -42,6 +42,8 @@ public class MyAdapterfordeletebooking extends RecyclerView.Adapter<MyAdapterfor
             public void onClick(View view) {
                 Intent intent = new Intent(context,deletebooking_screen.class);
                 intent.putExtra("pnr",holder.pnr.getText().toString());
+                intent.putExtra("date",holder.date.getText().toString());
+                intent.putExtra("tr_no",holder.tr_no.getText().toString());
                 context.startActivity(intent);
             }
         });

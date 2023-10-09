@@ -56,6 +56,7 @@ public class updatebookingdate_screen extends AppCompatActivity {
                 String date = updatebookingdateScreenBinding.updatebookingDate.getEditText().getText().toString();
 //                Toast.makeText(updatebookingdate_screen.this, date, Toast.LENGTH_SHORT).show();
                 db.updatebookedticket(date,pnr);
+                startActivity(new Intent(updatebookingdate_screen.this, mybookedtickets_screen.class));
             }
         });
     }
